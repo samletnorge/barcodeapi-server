@@ -1,0 +1,7 @@
+.git
+.gitea
+target
+cache
+logs
+uploads
+*.snap

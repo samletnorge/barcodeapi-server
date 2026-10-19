@@ -26,7 +26,6 @@ import org.json.JSONObject;
 
 import com.mclarkdev.tools.libargs.LibArgs;
 import com.mclarkdev.tools.liblog.LibLog;
-import com.mclarkdev.tools.libloggelf.lib.LibLogGELFLogWriter;
 
 /**
  * ServerLauncher.java
@@ -41,7 +40,6 @@ public class ServerLauncher {
 
 	static {
 		LibLog._logF("Runtime ID: %s", ServerRuntime.getRuntimeID());
-		LibLog.cfg().registerLogger(LibLogGELFLogWriter.class);
 	}
 
 	// The Jetty server and it's handlers
@@ -67,7 +65,7 @@ public class ServerLauncher {
 
 		// Load localized message codes
 		LibLog._logF("Loading Language Pack: %s", lang);
-		LibLog.cfg().loadStrings(ServerLauncher.class.getResourceAsStream(//
+		LibLog.loadStrings(ServerLauncher.class.getResourceAsStream(//
 				String.format("/strings/codes.%s.properties", lang)));
 
 		// Log config distribution being used
