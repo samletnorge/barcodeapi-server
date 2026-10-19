@@ -36,7 +36,7 @@ public class StaticHandler extends RestHandler {
 		resources = new ResourceHandler();
 		resources.setServer(server);
 		resources.setResourceBase("resources");
-		resources.setRedirectWelcome(true);
+		resources.setRedirectWelcome(false);
 		resources.setWelcomeFiles(new String[] { "index.html" });
 		resources.setCacheControl(("max-age=" + CACHED_LIFE_SEC));
 		resources.start();
